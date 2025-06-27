@@ -1,5 +1,8 @@
 console.log("Email Writer Extension - Content Script Loaded");
 
+// Set your backend API URL here for production
+const API_BASE_URL = 'http://localhost:8080'; // Change to your Railway URL in production
+
 function createAIButton() {
    const button = document.createElement('div');
    button.className = 'T-I J-J5-Ji aoO v7 T-I-atl L3';
@@ -63,7 +66,7 @@ function injectButton() {
             button.disabled = true;
 
             const emailContent = getEmailContent();
-            const response = await fetch('http://localhost:8080/api/email/generate', {
+            const response = await fetch(API_BASE_URL + '/api/email/generate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

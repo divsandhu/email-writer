@@ -5,6 +5,7 @@
     "manifest_version": 3,
     "permissions": ["activeTab", "storage"],
     "host_permissions": [
+        // Change this to your Railway backend URL in production
         "http://localhost:8080/*",
         "*://mail.google.com/*"
     ],
